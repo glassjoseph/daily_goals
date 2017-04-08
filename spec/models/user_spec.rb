@@ -20,6 +20,13 @@ RSpec.describe "User is created" do
       expect(user).to respond_to(:username)
     end
 
+    it "user has a role" do
+      user = create(:user)
+
+      expect(user.role).to eq("default")
+    end
+    
+
   context "validations" do
     it "is invalid without username" do
       user = User.create( password: "password")
