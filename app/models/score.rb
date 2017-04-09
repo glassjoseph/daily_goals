@@ -9,5 +9,5 @@ class Score < ActiveRecord::Base
   def set_default_date
     self.date = Date.today unless self.date
   end
-
+  
 end

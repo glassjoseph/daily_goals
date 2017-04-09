@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170409051429) do
   enable_extension "plpgsql"
 
   create_table "dailies", force: :cascade do |t|
-    t.string  "goal"
+    t.text    "goal"
     t.integer "user_id"
     t.index ["user_id"], name: "index_dailies_on_user_id", using: :btree
   end
