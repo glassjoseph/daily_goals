@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170406174220) do
+ActiveRecord::Schema.define(version: 20170409051429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 20170406174220) do
     t.index ["user_id"], name: "index_dailies_on_user_id", using: :btree
   end
 
+  create_table "scores", force: :cascade do |t|
+    t.date    "date"
+    t.integer "score"
+    t.integer "daily_id"
+    t.index ["daily_id"], name: "index_scores_on_daily_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string  "username"
     t.string  "email"
@@ -29,4 +36,5 @@ ActiveRecord::Schema.define(version: 20170406174220) do
   end
 
   add_foreign_key "dailies", "users"
+  add_foreign_key "scores", "dailies"
 end

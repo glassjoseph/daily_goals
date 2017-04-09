@@ -1,4 +1,10 @@
 <%= @daily.goal %>
 
+<% @daily.scores.each do |score| %>
+  <div class="score">
+    Date: <%= score.date %>
+    Score: <%= score.score %>
+  </div>
+<% end %>
 <%= link_to "Edit Goal", edit_user_daily_path(@daily) %>
 <%= link_to "Delete Goal", user_daily_path(@daily), method: :delete %>
