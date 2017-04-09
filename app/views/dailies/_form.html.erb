@@ -1,0 +1,6 @@
+<%= form_for [@user, @daily] do |f| %>
+  <%= f.label :goal %>
+  <%= f.text_field :goal %>
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <%= f.submit %>
+<% end %>

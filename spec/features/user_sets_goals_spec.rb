@@ -7,7 +7,7 @@ RSpec.describe "User setting goals" do
       user = create(:user)
       visit user_path(user)
 
-      click_on "Create/Edit Dailies"
+      click_on "Create Dailies"
 
       fill_in "Daily 1", with: "Goal 1"
       fill_in "Daily 2", with: "Goal 2"
